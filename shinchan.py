@@ -4,7 +4,7 @@ p = Turtle()
 p.width(2)
 p.up()
 s = Screen()
-s.bgcolor("pink")
+# s.bgcolor("pink")
 s.delay(0)
 
 def hands():
@@ -41,11 +41,28 @@ def hands():
     pen.right(160)
     pen.circle(50,20)
     pen.circle(2,150)
-    pen.circle(70,20)
+    pen.circle(60,20)
 
+    pen2 = pen.clone()
+    pen2.left(90)
+    # pen2.fd(5)
+    pen2.right(15)
+    pen2.circle(-20,20)
+    pen2.circle(-2,150)
+    pen2.circle(-20,20)
+    pen2.ht()
 
+    pen.right(75)
+    pen.forward(6)
+    pen.left(60)
+    pen.forward(6)
+    pen.left(30)
+    pen.forward(5)
+    pen.right(75)
+    pen.forward(5)
     pen.end_fill()
     pen.ht()
+
 
 def pants():
     r = Turtle()
@@ -308,5 +325,5 @@ def shinchan(posx,posy):
 
 shinchan(0,0)
 #s.bgcolor("#ecbcb4")
-p.ht()
+# p.ht()
 done()
