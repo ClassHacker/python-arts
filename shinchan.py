@@ -9,6 +9,8 @@ s.delay(0)
 
 def hands():
     pen = Turtle()
+    pen1 = Turtle()
+    pen1.goto(-100,160)
     pen.goto(133,120)
     pen.width(2)
     pen.fillcolor("#ecbcb4")
