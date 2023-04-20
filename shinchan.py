@@ -8,10 +8,13 @@ s = Screen()
 s.delay(0)
 
 def hands():
-    pen = Turtle()
+    #drawing right hand
     pen1 = Turtle()
     pen1.goto(-100,160)
     pen.goto(133,120)
+
+    #drawing left hand
+    pen = Turtle()
     pen.width(2)
     pen.fillcolor("#ecbcb4")
     pen.begin_fill()
