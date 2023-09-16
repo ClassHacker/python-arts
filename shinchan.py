@@ -1,15 +1,19 @@
 from turtle import Turtle,Screen,done
 
 p = Turtle()
+p.shape('turtle')
 p.width(2)
 p.up()
+p.speed(10)
 s = Screen()
-# s.bgcolor("pink")
-s.delay(0)
+s.title("Shinchan")
+s.bgcolor("#ecbcb4")
+# s.delay(0)
 
 def hands():
     #drawing right hand
     pen = Turtle()
+    pen.speed(10)
     pen.width(2)
     pen.fillcolor("#ecbcb4")
     pen.begin_fill()
@@ -20,6 +24,7 @@ def hands():
     pen.circle(-5,90)
     pen.fd(10)
     pen.left(30)
+    pen.speed(0)
     pen.circle(-4,-90)
     pen.circle(-3,90)
     pen.circle(-6,90)
@@ -62,6 +67,7 @@ def hands():
 
     #drawing left hand
     pen = Turtle()
+    pen.speed(10)
     pen.width(2)
     pen.fillcolor("#ecbcb4")
     pen.begin_fill()
@@ -73,6 +79,7 @@ def hands():
     pen.fd(10)
     pen.right(30)
     
+    pen.speed(0)
     pen.circle(4,-90)
     pen.circle(3,90)
     pen.circle(6,90)
@@ -116,9 +123,9 @@ def hands():
     pen.end_fill()
     pen.ht()
 
-
 def pants():
     r = Turtle()
+    r.speed(10)
     r.width(2)
     r.up()
     r.goto(63,-22)
@@ -146,7 +153,8 @@ def pants():
 def legs():
     #left leg
     pen = Turtle()
-    pen.ht()
+    pen.speed(10)
+    # pen.ht()
     pen.width(2)
     pen.goto(38,-140)
 
@@ -187,6 +195,7 @@ def legs():
     #right leg
     pen = Turtle()
     pen.ht()
+    pen.speed(10)
     pen.width(2)
     pen.goto(-38,-140)
 
@@ -226,8 +235,8 @@ def legs():
     pen2.end_fill()
     pen2.ht()
 
-
 def eye(p):
+    p.speed(1)
     p.down()
     p.dot(35)
     p.fd(2)
@@ -235,9 +244,12 @@ def eye(p):
     p.dot(15)
     p.color("black")
     p.up()
+    p.ht()
+    p.speed(10)
 
 def eyebrows():
     pen = Turtle()
+    pen.shape("turtle")
     pen.color("#222222")
     pen.up()
     pen.goto(-30,210)
@@ -256,21 +268,20 @@ def eyebrows():
     pen.circle(150,-15)
     pen.ht()
 
-def shinchan(posx,posy):
+def shinchan(xx,yy):
     hands()
-    #done()
-    #drawing lower body
     legs()
     pants()
-
     p.begin_poly()
     p.goto(-10,180)
+    p.ht()
     #eyes
     eye(p)
     p.right(10)
     p.forward(60)
     eye(p)
-    #done()
+    #eyebrows
+    eyebrows()
 
     p.right(5)
     p.fd(40)
@@ -292,6 +303,7 @@ def shinchan(posx,posy):
     
 
     #elipse-mouth
+    p.speed(0)
     p.fillcolor("#aa0000")
     p.begin_fill()
     p.circle(12,90)
@@ -299,6 +311,7 @@ def shinchan(posx,posy):
     p.circle(12,90)
     p.circle(20,99)
     p.end_fill()
+    p.speed(10)
     #done()
 
     #new pen for chest
@@ -341,6 +354,7 @@ def shinchan(posx,posy):
     p.circle(240,35)
 
     #hair
+    p.speed(0)
     p.left(50)
     p.circle(30,60)
     p.fillcolor("black")
@@ -371,12 +385,5 @@ def shinchan(posx,posy):
     p.circle(18,-180)
     p.up()
 
-    #eyebrows
-    eyebrows()
-    #done()
-
-
-shinchan(0,0)
-#s.bgcolor("#ecbcb4")
-# p.ht()
-done()
+s.onclick(shinchan)
+s.mainloop()
